@@ -1,13 +1,11 @@
 import fs from "node:fs";
 import { PNG } from "pngjs";
 
-console.log("Hello World");
-
 const imageLoc = "Images/this-clean.png";
 
-processPixels();
+buildImageHeaders();
 
-async function processPixels() {
+async function buildImageHeaders() {
     const buffer = await fs.readFileSync(imageLoc);
     const colorMap: Record<string, number> = {};
     const colorIndexMap: Record<string, number> = {};

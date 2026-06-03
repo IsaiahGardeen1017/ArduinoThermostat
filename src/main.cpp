@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <TFT_eSPI.h>
 #include "image.h"
+#include "sound.h"
 
 namespace
 {
@@ -8,21 +9,8 @@ namespace
     constexpr int kButton1Pin = 35;
     constexpr int kButton2Pin = 0;
 
-    constexpr int kBuzzer1Pin = 17;
-    constexpr int kBuzzer2Pin = 21;
-    constexpr int kBuzzer3Pin = 22;
-
-    constexpr int kBuzzerChannel1 = 0;
-    constexpr int kBuzzerChannel2 = 1;
-    constexpr int kBuzzerChannel3 = 2;
-
     constexpr int kScreenWidth = 240;
     constexpr int kScreenHeight = 135;
-    constexpr unsigned long kBeepDurationMs = 120;
-
-    unsigned long channel1EndTime = 0;
-    unsigned long channel2EndTime = 0;
-    unsigned long channel3EndTime = 0;
 
     int tick = 0;
     bool lastButton1Pressed = false;
@@ -51,16 +39,10 @@ namespace
         return x;
     }
 
-    void renderPixel(int i, int j)
+    void drawStatusScreen(unsigned long secondsSinceBoot, u_int8_t tick, bool flipped)
     {
-        int seed = (((i * kScreenWidth) + j) * 3) + tick;
-        framebuffer.drawPixel(i, j, rgb565(xorshift32(seed), 0, xorshift32(seed + 2)));
-    }
-
-    void drawStatusScreen(unsigned long secondsSinceBoot, u_int8_t tick)
-    {
-        bool flipY = false;
-        bool flipX = false;
+        bool flipY = flipped;
+        bool flipX = flipped;
 
         framebuffer.fillSprite(TFT_BLACK);
 
@@ -79,16 +61,6 @@ namespace
         framebuffer.pushSprite(0, 0);
     }
 
-    void buzzerOn(int channel, uint32_t frequencyHz)
-    {
-        ledcWriteTone(channel, frequencyHz);
-    }
-
-    void buzzerOff(int channel)
-    {
-        ledcWriteTone(channel, 0);
-    }
-
 } // namespace
 
 void setup()
@@ -102,23 +74,13 @@ void setup()
     pinMode(kButton1Pin, INPUT);
     pinMode(kButton2Pin, INPUT_PULLUP);
 
-    ledcSetup(kBuzzerChannel1, 2000, 8);
-    ledcSetup(kBuzzerChannel2, 2000, 8);
-    ledcSetup(kBuzzerChannel3, 2000, 8);
-    ledcAttachPin(kBuzzer1Pin, kBuzzerChannel1);
-    ledcAttachPin(kBuzzer2Pin, kBuzzerChannel2);
-    ledcAttachPin(kBuzzer3Pin, kBuzzerChannel3);
-    ledcWriteTone(kBuzzerChannel1, 0);
-    ledcWriteTone(kBuzzerChannel2, 0);
-    ledcWriteTone(kBuzzerChannel3, 0);
-
-    // buzzerOn(kBuzzerChannel3, 1750);
+    Sound::init();
 
     tft.init();
     tft.setRotation(3);
     framebuffer.setColorDepth(16);
     framebuffer.createSprite(kScreenWidth, kScreenHeight);
-    drawStatusScreen(0, 0);
+    drawStatusScreen(0, 0, false);
 
     Serial.println();
     Serial.println("Booting LILYGO T-Display starter project...");
@@ -133,34 +95,25 @@ void loop()
     if (!button1isBeingHeld && button1Signal)
     {
         // Button 1 was pressed
-        buzzerOn(kBuzzerChannel1, 2000);
-        channel1EndTime = timestamp + 250;
         button1isBeingHeld = true;
+        Sound::startSong(timestamp);
     }
     if (button1isBeingHeld && !button1Signal)
     {
         // Button 1 was release
-        buzzerOn(kBuzzerChannel2, 1500);
-        channel2EndTime = timestamp + 250;
         button1isBeingHeld = false;
     }
 
     const bool button2Signal = digitalRead(kButton2Pin) == LOW;
-
-    if (timestamp > channel1EndTime)
-    {
-        buzzerOff(kBuzzerChannel1);
-    }
-    if (timestamp > channel2EndTime)
-    {
-        buzzerOff(kBuzzerChannel2);
-    }
+    Sound::update(timestamp, button1isBeingHeld);
 
     if (timestamp - lastScreenRefresh > 16)
     {
         // drawStatusScreen(timestamp, tick);
         lastScreenRefresh = timestamp;
     }
+
+    drawStatusScreen(0, 0, button1isBeingHeld);
 
     // Serial.print("uptime=");
     // Serial.print(timestamp);
