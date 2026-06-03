@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <TFT_eSPI.h>
+#include "image.h"
 
 namespace
 {
@@ -56,17 +57,25 @@ namespace
         framebuffer.drawPixel(i, j, rgb565(xorshift32(seed), 0, xorshift32(seed + 2)));
     }
 
-    void drawStatusScreen(unsigned long secondsSinceBoot, bool button1Pressed, bool button2Pressed, u_int8_t tick)
+    void drawStatusScreen(unsigned long secondsSinceBoot, u_int8_t tick)
     {
+        bool flipY = false;
+        bool flipX = false;
+
         framebuffer.fillSprite(TFT_BLACK);
-        for (int i = 0; i < kScreenWidth; i++)
+
+        for (int y = 0; y < imageHeight; y++)
         {
-            for (int j = 0; j < kScreenHeight; j++)
+            for (int x = 0; x < imageWidth; x++)
             {
-                renderPixel(i, j);
+                int rX = flipX ? imageWidth - 1 - x : x;
+                int rY = flipY ? imageHeight - 1 - y : y;
+                int idx = rY * imageWidth + rX;
+                uint8_t paletteIndex = imageIndexes[idx];
+                uint16_t color = imagePalette[paletteIndex];
+                framebuffer.drawPixel(x, y, color);
             }
         }
-
         framebuffer.pushSprite(0, 0);
     }
 
@@ -103,12 +112,13 @@ void setup()
     ledcWriteTone(kBuzzerChannel2, 0);
     ledcWriteTone(kBuzzerChannel3, 0);
 
-    buzzerOn(kBuzzerChannel3, 1750);
+    // buzzerOn(kBuzzerChannel3, 1750);
 
     tft.init();
-    tft.setRotation(1);
+    tft.setRotation(3);
     framebuffer.setColorDepth(16);
     framebuffer.createSprite(kScreenWidth, kScreenHeight);
+    drawStatusScreen(0, 0);
 
     Serial.println();
     Serial.println("Booting LILYGO T-Display starter project...");
@@ -123,14 +133,14 @@ void loop()
     if (!button1isBeingHeld && button1Signal)
     {
         // Button 1 was pressed
-        buzzerOn(kBuzzerChannel1, 1500);
+        buzzerOn(kBuzzerChannel1, 2000);
         channel1EndTime = timestamp + 250;
         button1isBeingHeld = true;
     }
     if (button1isBeingHeld && !button1Signal)
     {
         // Button 1 was release
-        buzzerOn(kBuzzerChannel2, 2000);
+        buzzerOn(kBuzzerChannel2, 1500);
         channel2EndTime = timestamp + 250;
         button1isBeingHeld = false;
     }
@@ -146,9 +156,9 @@ void loop()
         buzzerOff(kBuzzerChannel2);
     }
 
-    if (lastScreenRefresh > timestamp - 16)
+    if (timestamp - lastScreenRefresh > 16)
     {
-        drawStatusScreen(timestamp, button1Signal, button2Signal, tick);
+        // drawStatusScreen(timestamp, tick);
         lastScreenRefresh = timestamp;
     }
 
