@@ -10,6 +10,7 @@
             "includePath": [
                 "C:/MyProjectsC/ArduinoThermostat/include",
                 "C:/MyProjectsC/ArduinoThermostat/src",
+                "C:/Users/isaia/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src",
                 "C:/MyProjectsC/ArduinoThermostat/.pio/libdeps/lilygo-t-display/TFT_eSPI",
                 "C:/Users/isaia/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src",
                 "C:/Users/isaia/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src",
@@ -239,7 +240,6 @@
                 "C:/Users/isaia/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
                 "C:/Users/isaia/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src",
                 "C:/Users/isaia/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src",
-                "C:/Users/isaia/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src",
                 ""
             ],
             "browse": {
@@ -247,6 +247,7 @@
                 "path": [
                     "C:/MyProjectsC/ArduinoThermostat/include",
                     "C:/MyProjectsC/ArduinoThermostat/src",
+                    "C:/Users/isaia/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src",
                     "C:/MyProjectsC/ArduinoThermostat/.pio/libdeps/lilygo-t-display/TFT_eSPI",
                     "C:/Users/isaia/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src",
                     "C:/Users/isaia/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src",
@@ -476,7 +477,6 @@
                     "C:/Users/isaia/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
                     "C:/Users/isaia/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src",
                     "C:/Users/isaia/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src",
-                    "C:/Users/isaia/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src",
                     ""
                 ]
             },

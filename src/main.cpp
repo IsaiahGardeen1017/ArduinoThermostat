@@ -2,26 +2,29 @@
 #include <TFT_eSPI.h>
 #include "image.h"
 #include "sound.h"
+#include "thermometer.h"
 
 namespace
 {
-    constexpr int kBacklightPin = 4;
-    constexpr int kButton1Pin = 35;
-    constexpr int kButton2Pin = 0;
-
-    constexpr int kScreenWidth = 240;
-    constexpr int kScreenHeight = 135;
+    constexpr int numButtons = 2;
+    constexpr int buttonPins[] = {35, 0};
+    bool buttonStates[numButtons] = {0, 0};
 
     int tick = 0;
-    bool lastButton1Pressed = false;
-    bool lastButton2Pressed = false;
 
-    bool button1isBeingHeld = false;
+    // constexpr int kButton1Pin = 35;
+    // constexpr int kButton2Pin = 0;
+
+    constexpr int kBacklightPin = 4;
+    constexpr int kScreenWidth = 240;
+    constexpr int kScreenHeight = 135;
 
     unsigned long lastScreenRefresh = 0;
 
     TFT_eSPI tft = TFT_eSPI();
     TFT_eSprite framebuffer = TFT_eSprite(&tft);
+
+    int targetTemp = 70;
 
     uint16_t rgb565(uint8_t r, uint8_t g, uint8_t b)
     {
@@ -41,6 +44,8 @@ namespace
 
     void drawStatusScreen(unsigned long secondsSinceBoot, u_int8_t tick, bool flipped)
     {
+        float temp = Thermometer::getTemp();
+
         bool flipY = flipped;
         bool flipX = flipped;
 
@@ -58,6 +63,18 @@ namespace
                 framebuffer.drawPixel(x, y, color);
             }
         }
+        framebuffer.setTextColor(rgb565(255, 128, 0));
+        framebuffer.setTextFont(1);
+        framebuffer.setTextSize(1);
+        framebuffer.setCursor(10, 20);
+        framebuffer.println(temp, 1);
+
+        framebuffer.setTextColor(rgb565(0, 128, 255));
+        framebuffer.setTextFont(1);
+        framebuffer.setTextSize(1);
+        framebuffer.setCursor(10, 60);
+        framebuffer.println(targetTemp);
+
         framebuffer.pushSprite(0, 0);
     }
 
@@ -68,22 +85,22 @@ void setup()
     Serial.begin(115200);
     delay(250);
 
-    pinMode(kBacklightPin, OUTPUT);
-    digitalWrite(kBacklightPin, HIGH);
-
-    pinMode(kButton1Pin, INPUT);
-    pinMode(kButton2Pin, INPUT_PULLUP);
+    pinMode(buttonPins[0], INPUT);
+    pinMode(buttonPins[1], INPUT_PULLUP);
 
     Sound::init();
-
+    Thermometer::init();
     tft.init();
     tft.setRotation(3);
+
+    pinMode(kBacklightPin, OUTPUT);
+    digitalWrite(kBacklightPin, HIGH);
     framebuffer.setColorDepth(16);
     framebuffer.createSprite(kScreenWidth, kScreenHeight);
     drawStatusScreen(0, 0, false);
 
     Serial.println();
-    Serial.println("Booting LILYGO T-Display starter project...");
+    Serial.println("Yongo Plongo");
 }
 
 void loop()
@@ -91,29 +108,39 @@ void loop()
     tick++;
     const unsigned long timestamp = millis();
 
-    const bool button1Signal = digitalRead(kButton1Pin) == LOW;
-    if (!button1isBeingHeld && button1Signal)
+    for (int i = 0; i < numButtons; i++)
     {
-        // Button 1 was pressed
-        button1isBeingHeld = true;
-        Sound::startSong(timestamp);
-    }
-    if (button1isBeingHeld && !button1Signal)
-    {
-        // Button 1 was release
-        button1isBeingHeld = false;
+        const bool signal = digitalRead(buttonPins[i]) == LOW;
+        if (!buttonStates[i] && signal)
+        {
+            // Button pressed
+            buttonStates[i] = true;
+            Sound::buttonPressed(i, timestamp);
+            if (i == 0)
+            {
+                targetTemp--;
+            }
+            else if (i == 1)
+            {
+                targetTemp++;
+            }
+        }
+        if (buttonStates[i] && !signal)
+        {
+            // Button released
+            buttonStates[i] = false;
+            Sound::buttonReleased(i, timestamp);
+        }
     }
 
-    const bool button2Signal = digitalRead(kButton2Pin) == LOW;
-    Sound::update(timestamp, button1isBeingHeld);
+    Sound::update(timestamp);
+    Thermometer::update(timestamp);
 
     if (timestamp - lastScreenRefresh > 16)
     {
-        // drawStatusScreen(timestamp, tick);
         lastScreenRefresh = timestamp;
+        drawStatusScreen(0, 0, false);
     }
-
-    drawStatusScreen(0, 0, button1isBeingHeld);
 
     // Serial.print("uptime=");
     // Serial.print(timestamp);

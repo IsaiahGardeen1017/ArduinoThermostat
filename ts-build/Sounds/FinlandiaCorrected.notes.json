@@ -1,0 +1,1262 @@
+[
+  {
+    "startTick": 0,
+    "endTick": 192,
+    "midi": 44
+  },
+  {
+    "startTick": 0,
+    "endTick": 192,
+    "midi": 56
+  },
+  {
+    "startTick": 0,
+    "endTick": 192,
+    "midi": 63
+  },
+  {
+    "startTick": 0,
+    "endTick": 192,
+    "midi": 72
+  },
+  {
+    "startTick": 192,
+    "endTick": 384,
+    "midi": 49
+  },
+  {
+    "startTick": 192,
+    "endTick": 384,
+    "midi": 55
+  },
+  {
+    "startTick": 192,
+    "endTick": 384,
+    "midi": 63
+  },
+  {
+    "startTick": 192,
+    "endTick": 384,
+    "midi": 70
+  },
+  {
+    "startTick": 384,
+    "endTick": 576,
+    "midi": 48
+  },
+  {
+    "startTick": 384,
+    "endTick": 576,
+    "midi": 56
+  },
+  {
+    "startTick": 384,
+    "endTick": 576,
+    "midi": 63
+  },
+  {
+    "startTick": 384,
+    "endTick": 576,
+    "midi": 72
+  },
+  {
+    "startTick": 576,
+    "endTick": 1152,
+    "midi": 46
+  },
+  {
+    "startTick": 576,
+    "endTick": 1152,
+    "midi": 55
+  },
+  {
+    "startTick": 576,
+    "endTick": 1152,
+    "midi": 63
+  },
+  {
+    "startTick": 576,
+    "endTick": 1152,
+    "midi": 73
+  },
+  {
+    "startTick": 1152,
+    "endTick": 1344,
+    "midi": 44
+  },
+  {
+    "startTick": 1152,
+    "endTick": 1344,
+    "midi": 56
+  },
+  {
+    "startTick": 1152,
+    "endTick": 1344,
+    "midi": 63
+  },
+  {
+    "startTick": 1152,
+    "endTick": 1344,
+    "midi": 72
+  },
+  {
+    "startTick": 1344,
+    "endTick": 1536,
+    "midi": 49
+  },
+  {
+    "startTick": 1344,
+    "endTick": 1536,
+    "midi": 55
+  },
+  {
+    "startTick": 1344,
+    "endTick": 1536,
+    "midi": 63
+  },
+  {
+    "startTick": 1344,
+    "endTick": 1536,
+    "midi": 70
+  },
+  {
+    "startTick": 1536,
+    "endTick": 1728,
+    "midi": 48
+  },
+  {
+    "startTick": 1536,
+    "endTick": 1728,
+    "midi": 56
+  },
+  {
+    "startTick": 1536,
+    "endTick": 1728,
+    "midi": 63
+  },
+  {
+    "startTick": 1536,
+    "endTick": 1728,
+    "midi": 72
+  },
+  {
+    "startTick": 1728,
+    "endTick": 2016,
+    "midi": 49
+  },
+  {
+    "startTick": 1728,
+    "endTick": 2016,
+    "midi": 53
+  },
+  {
+    "startTick": 1728,
+    "endTick": 2016,
+    "midi": 61
+  },
+  {
+    "startTick": 1728,
+    "endTick": 2016,
+    "midi": 68
+  },
+  {
+    "startTick": 2016,
+    "endTick": 2112,
+    "midi": 46
+  },
+  {
+    "startTick": 2016,
+    "endTick": 2112,
+    "midi": 55
+  },
+  {
+    "startTick": 2016,
+    "endTick": 2112,
+    "midi": 61
+  },
+  {
+    "startTick": 2016,
+    "endTick": 2112,
+    "midi": 70
+  },
+  {
+    "startTick": 2112,
+    "endTick": 2304,
+    "midi": 46
+  },
+  {
+    "startTick": 2112,
+    "endTick": 2304,
+    "midi": 55
+  },
+  {
+    "startTick": 2112,
+    "endTick": 2304,
+    "midi": 61
+  },
+  {
+    "startTick": 2112,
+    "endTick": 2304,
+    "midi": 70
+  },
+  {
+    "startTick": 2304,
+    "endTick": 3072,
+    "midi": 44
+  },
+  {
+    "startTick": 2304,
+    "endTick": 3072,
+    "midi": 56
+  },
+  {
+    "startTick": 2304,
+    "endTick": 3072,
+    "midi": 63
+  },
+  {
+    "startTick": 2304,
+    "endTick": 3072,
+    "midi": 72
+  },
+  {
+    "startTick": 3072,
+    "endTick": 3264,
+    "midi": 44
+  },
+  {
+    "startTick": 3072,
+    "endTick": 3264,
+    "midi": 56
+  },
+  {
+    "startTick": 3072,
+    "endTick": 3264,
+    "midi": 63
+  },
+  {
+    "startTick": 3072,
+    "endTick": 3264,
+    "midi": 72
+  },
+  {
+    "startTick": 3264,
+    "endTick": 3456,
+    "midi": 49
+  },
+  {
+    "startTick": 3264,
+    "endTick": 3456,
+    "midi": 55
+  },
+  {
+    "startTick": 3264,
+    "endTick": 3456,
+    "midi": 63
+  },
+  {
+    "startTick": 3264,
+    "endTick": 3456,
+    "midi": 70
+  },
+  {
+    "startTick": 3456,
+    "endTick": 3648,
+    "midi": 48
+  },
+  {
+    "startTick": 3456,
+    "endTick": 3648,
+    "midi": 56
+  },
+  {
+    "startTick": 3456,
+    "endTick": 3648,
+    "midi": 63
+  },
+  {
+    "startTick": 3456,
+    "endTick": 3648,
+    "midi": 72
+  },
+  {
+    "startTick": 3648,
+    "endTick": 4224,
+    "midi": 46
+  },
+  {
+    "startTick": 3648,
+    "endTick": 4224,
+    "midi": 55
+  },
+  {
+    "startTick": 3648,
+    "endTick": 4224,
+    "midi": 63
+  },
+  {
+    "startTick": 3648,
+    "endTick": 4224,
+    "midi": 73
+  },
+  {
+    "startTick": 4224,
+    "endTick": 4416,
+    "midi": 44
+  },
+  {
+    "startTick": 4224,
+    "endTick": 4416,
+    "midi": 56
+  },
+  {
+    "startTick": 4224,
+    "endTick": 4416,
+    "midi": 63
+  },
+  {
+    "startTick": 4224,
+    "endTick": 4416,
+    "midi": 72
+  },
+  {
+    "startTick": 4416,
+    "endTick": 4608,
+    "midi": 49
+  },
+  {
+    "startTick": 4416,
+    "endTick": 4608,
+    "midi": 55
+  },
+  {
+    "startTick": 4416,
+    "endTick": 4608,
+    "midi": 63
+  },
+  {
+    "startTick": 4416,
+    "endTick": 4608,
+    "midi": 70
+  },
+  {
+    "startTick": 4608,
+    "endTick": 4800,
+    "midi": 48
+  },
+  {
+    "startTick": 4608,
+    "endTick": 4800,
+    "midi": 56
+  },
+  {
+    "startTick": 4608,
+    "endTick": 4800,
+    "midi": 63
+  },
+  {
+    "startTick": 4608,
+    "endTick": 4800,
+    "midi": 72
+  },
+  {
+    "startTick": 4800,
+    "endTick": 5088,
+    "midi": 49
+  },
+  {
+    "startTick": 4800,
+    "endTick": 5088,
+    "midi": 53
+  },
+  {
+    "startTick": 4800,
+    "endTick": 5088,
+    "midi": 61
+  },
+  {
+    "startTick": 4800,
+    "endTick": 5088,
+    "midi": 68
+  },
+  {
+    "startTick": 5088,
+    "endTick": 5184,
+    "midi": 46
+  },
+  {
+    "startTick": 5088,
+    "endTick": 5184,
+    "midi": 55
+  },
+  {
+    "startTick": 5088,
+    "endTick": 5184,
+    "midi": 61
+  },
+  {
+    "startTick": 5088,
+    "endTick": 5184,
+    "midi": 70
+  },
+  {
+    "startTick": 5184,
+    "endTick": 6144,
+    "midi": 44
+  },
+  {
+    "startTick": 5184,
+    "endTick": 6144,
+    "midi": 56
+  },
+  {
+    "startTick": 5184,
+    "endTick": 6144,
+    "midi": 63
+  },
+  {
+    "startTick": 5184,
+    "endTick": 6144,
+    "midi": 72
+  },
+  {
+    "startTick": 6144,
+    "endTick": 6336,
+    "midi": 56
+  },
+  {
+    "startTick": 6144,
+    "endTick": 6336,
+    "midi": 60
+  },
+  {
+    "startTick": 6144,
+    "endTick": 6336,
+    "midi": 68
+  },
+  {
+    "startTick": 6144,
+    "endTick": 6336,
+    "midi": 75
+  },
+  {
+    "startTick": 6336,
+    "endTick": 6528,
+    "midi": 56
+  },
+  {
+    "startTick": 6336,
+    "endTick": 6528,
+    "midi": 60
+  },
+  {
+    "startTick": 6336,
+    "endTick": 6528,
+    "midi": 68
+  },
+  {
+    "startTick": 6336,
+    "endTick": 6528,
+    "midi": 75
+  },
+  {
+    "startTick": 6528,
+    "endTick": 6720,
+    "midi": 55
+  },
+  {
+    "startTick": 6528,
+    "endTick": 6720,
+    "midi": 60
+  },
+  {
+    "startTick": 6528,
+    "endTick": 6720,
+    "midi": 68
+  },
+  {
+    "startTick": 6528,
+    "endTick": 6720,
+    "midi": 75
+  },
+  {
+    "startTick": 6720,
+    "endTick": 7296,
+    "midi": 53
+  },
+  {
+    "startTick": 6720,
+    "endTick": 7296,
+    "midi": 60
+  },
+  {
+    "startTick": 6720,
+    "endTick": 7296,
+    "midi": 68
+  },
+  {
+    "startTick": 6720,
+    "endTick": 7296,
+    "midi": 77
+  },
+  {
+    "startTick": 7296,
+    "endTick": 7488,
+    "midi": 53
+  },
+  {
+    "startTick": 7296,
+    "endTick": 7488,
+    "midi": 56
+  },
+  {
+    "startTick": 7296,
+    "endTick": 7488,
+    "midi": 65
+  },
+  {
+    "startTick": 7296,
+    "endTick": 7488,
+    "midi": 72
+  },
+  {
+    "startTick": 7488,
+    "endTick": 7680,
+    "midi": 53
+  },
+  {
+    "startTick": 7488,
+    "endTick": 7680,
+    "midi": 56
+  },
+  {
+    "startTick": 7488,
+    "endTick": 7680,
+    "midi": 65
+  },
+  {
+    "startTick": 7488,
+    "endTick": 7680,
+    "midi": 72
+  },
+  {
+    "startTick": 7680,
+    "endTick": 7872,
+    "midi": 48
+  },
+  {
+    "startTick": 7680,
+    "endTick": 7872,
+    "midi": 56
+  },
+  {
+    "startTick": 7680,
+    "endTick": 7872,
+    "midi": 63
+  },
+  {
+    "startTick": 7680,
+    "endTick": 7872,
+    "midi": 75
+  },
+  {
+    "startTick": 7872,
+    "endTick": 8160,
+    "midi": 48
+  },
+  {
+    "startTick": 7872,
+    "endTick": 8160,
+    "midi": 56
+  },
+  {
+    "startTick": 7872,
+    "endTick": 8160,
+    "midi": 63
+  },
+  {
+    "startTick": 7872,
+    "endTick": 8160,
+    "midi": 75
+  },
+  {
+    "startTick": 8160,
+    "endTick": 8256,
+    "midi": 51
+  },
+  {
+    "startTick": 8160,
+    "endTick": 8256,
+    "midi": 55
+  },
+  {
+    "startTick": 8160,
+    "endTick": 8256,
+    "midi": 63
+  },
+  {
+    "startTick": 8160,
+    "endTick": 8256,
+    "midi": 70
+  },
+  {
+    "startTick": 8256,
+    "endTick": 8448,
+    "midi": 51
+  },
+  {
+    "startTick": 8256,
+    "endTick": 8448,
+    "midi": 55
+  },
+  {
+    "startTick": 8256,
+    "endTick": 8448,
+    "midi": 63
+  },
+  {
+    "startTick": 8256,
+    "endTick": 8448,
+    "midi": 70
+  },
+  {
+    "startTick": 8448,
+    "endTick": 9216,
+    "midi": 46
+  },
+  {
+    "startTick": 8448,
+    "endTick": 9216,
+    "midi": 58
+  },
+  {
+    "startTick": 8448,
+    "endTick": 9216,
+    "midi": 65
+  },
+  {
+    "startTick": 8448,
+    "endTick": 9216,
+    "midi": 73
+  },
+  {
+    "startTick": 9216,
+    "endTick": 9408,
+    "midi": 46
+  },
+  {
+    "startTick": 9216,
+    "endTick": 9408,
+    "midi": 58
+  },
+  {
+    "startTick": 9216,
+    "endTick": 9408,
+    "midi": 65
+  },
+  {
+    "startTick": 9216,
+    "endTick": 9408,
+    "midi": 73
+  },
+  {
+    "startTick": 9408,
+    "endTick": 9600,
+    "midi": 48
+  },
+  {
+    "startTick": 9408,
+    "endTick": 9600,
+    "midi": 57
+  },
+  {
+    "startTick": 9408,
+    "endTick": 9600,
+    "midi": 63
+  },
+  {
+    "startTick": 9408,
+    "endTick": 9600,
+    "midi": 72
+  },
+  {
+    "startTick": 9600,
+    "endTick": 9792,
+    "midi": 49
+  },
+  {
+    "startTick": 9600,
+    "endTick": 9792,
+    "midi": 58
+  },
+  {
+    "startTick": 9600,
+    "endTick": 9792,
+    "midi": 65
+  },
+  {
+    "startTick": 9600,
+    "endTick": 9792,
+    "midi": 70
+  },
+  {
+    "startTick": 9792,
+    "endTick": 10368,
+    "midi": 51
+  },
+  {
+    "startTick": 9792,
+    "endTick": 10368,
+    "midi": 56
+  },
+  {
+    "startTick": 9792,
+    "endTick": 10368,
+    "midi": 63
+  },
+  {
+    "startTick": 9792,
+    "endTick": 10368,
+    "midi": 72
+  },
+  {
+    "startTick": 10368,
+    "endTick": 10560,
+    "midi": 48
+  },
+  {
+    "startTick": 10368,
+    "endTick": 10560,
+    "midi": 56
+  },
+  {
+    "startTick": 10368,
+    "endTick": 10560,
+    "midi": 63
+  },
+  {
+    "startTick": 10368,
+    "endTick": 10560,
+    "midi": 68
+  },
+  {
+    "startTick": 10560,
+    "endTick": 10752,
+    "midi": 49
+  },
+  {
+    "startTick": 10560,
+    "endTick": 10752,
+    "midi": 53
+  },
+  {
+    "startTick": 10560,
+    "endTick": 10752,
+    "midi": 61
+  },
+  {
+    "startTick": 10560,
+    "endTick": 10752,
+    "midi": 68
+  },
+  {
+    "startTick": 10752,
+    "endTick": 10944,
+    "midi": 49
+  },
+  {
+    "startTick": 10752,
+    "endTick": 10944,
+    "midi": 55
+  },
+  {
+    "startTick": 10752,
+    "endTick": 10944,
+    "midi": 65
+  },
+  {
+    "startTick": 10752,
+    "endTick": 10944,
+    "midi": 70
+  },
+  {
+    "startTick": 10944,
+    "endTick": 11232,
+    "midi": 49
+  },
+  {
+    "startTick": 10944,
+    "endTick": 11232,
+    "midi": 55
+  },
+  {
+    "startTick": 10944,
+    "endTick": 11232,
+    "midi": 65
+  },
+  {
+    "startTick": 10944,
+    "endTick": 11232,
+    "midi": 70
+  },
+  {
+    "startTick": 11232,
+    "endTick": 11328,
+    "midi": 48
+  },
+  {
+    "startTick": 11232,
+    "endTick": 11328,
+    "midi": 55
+  },
+  {
+    "startTick": 11232,
+    "endTick": 11328,
+    "midi": 64
+  },
+  {
+    "startTick": 11232,
+    "endTick": 11328,
+    "midi": 72
+  },
+  {
+    "startTick": 11328,
+    "endTick": 12288,
+    "midi": 48
+  },
+  {
+    "startTick": 11328,
+    "endTick": 12288,
+    "midi": 55
+  },
+  {
+    "startTick": 11328,
+    "endTick": 12288,
+    "midi": 64
+  },
+  {
+    "startTick": 11328,
+    "endTick": 12288,
+    "midi": 72
+  },
+  {
+    "startTick": 12288,
+    "endTick": 12480,
+    "midi": 56
+  },
+  {
+    "startTick": 12288,
+    "endTick": 12480,
+    "midi": 60
+  },
+  {
+    "startTick": 12288,
+    "endTick": 12480,
+    "midi": 68
+  },
+  {
+    "startTick": 12288,
+    "endTick": 12480,
+    "midi": 75
+  },
+  {
+    "startTick": 12480,
+    "endTick": 12672,
+    "midi": 56
+  },
+  {
+    "startTick": 12480,
+    "endTick": 12672,
+    "midi": 60
+  },
+  {
+    "startTick": 12480,
+    "endTick": 12672,
+    "midi": 68
+  },
+  {
+    "startTick": 12480,
+    "endTick": 12672,
+    "midi": 75
+  },
+  {
+    "startTick": 12672,
+    "endTick": 12864,
+    "midi": 55
+  },
+  {
+    "startTick": 12672,
+    "endTick": 12864,
+    "midi": 60
+  },
+  {
+    "startTick": 12672,
+    "endTick": 12864,
+    "midi": 68
+  },
+  {
+    "startTick": 12672,
+    "endTick": 12864,
+    "midi": 75
+  },
+  {
+    "startTick": 12864,
+    "endTick": 13440,
+    "midi": 53
+  },
+  {
+    "startTick": 12864,
+    "endTick": 13440,
+    "midi": 60
+  },
+  {
+    "startTick": 12864,
+    "endTick": 13440,
+    "midi": 68
+  },
+  {
+    "startTick": 12864,
+    "endTick": 13440,
+    "midi": 77
+  },
+  {
+    "startTick": 13440,
+    "endTick": 13632,
+    "midi": 53
+  },
+  {
+    "startTick": 13440,
+    "endTick": 13632,
+    "midi": 56
+  },
+  {
+    "startTick": 13440,
+    "endTick": 13632,
+    "midi": 65
+  },
+  {
+    "startTick": 13440,
+    "endTick": 13632,
+    "midi": 72
+  },
+  {
+    "startTick": 13632,
+    "endTick": 13824,
+    "midi": 53
+  },
+  {
+    "startTick": 13632,
+    "endTick": 13824,
+    "midi": 56
+  },
+  {
+    "startTick": 13632,
+    "endTick": 13824,
+    "midi": 65
+  },
+  {
+    "startTick": 13632,
+    "endTick": 13824,
+    "midi": 72
+  },
+  {
+    "startTick": 13824,
+    "endTick": 14016,
+    "midi": 48
+  },
+  {
+    "startTick": 13824,
+    "endTick": 14016,
+    "midi": 56
+  },
+  {
+    "startTick": 13824,
+    "endTick": 14016,
+    "midi": 63
+  },
+  {
+    "startTick": 13824,
+    "endTick": 14016,
+    "midi": 75
+  },
+  {
+    "startTick": 14016,
+    "endTick": 14304,
+    "midi": 48
+  },
+  {
+    "startTick": 14016,
+    "endTick": 14304,
+    "midi": 56
+  },
+  {
+    "startTick": 14016,
+    "endTick": 14304,
+    "midi": 63
+  },
+  {
+    "startTick": 14016,
+    "endTick": 14304,
+    "midi": 75
+  },
+  {
+    "startTick": 14304,
+    "endTick": 14400,
+    "midi": 51
+  },
+  {
+    "startTick": 14304,
+    "endTick": 14400,
+    "midi": 55
+  },
+  {
+    "startTick": 14304,
+    "endTick": 14400,
+    "midi": 63
+  },
+  {
+    "startTick": 14304,
+    "endTick": 14400,
+    "midi": 70
+  },
+  {
+    "startTick": 14400,
+    "endTick": 14592,
+    "midi": 51
+  },
+  {
+    "startTick": 14400,
+    "endTick": 14592,
+    "midi": 55
+  },
+  {
+    "startTick": 14400,
+    "endTick": 14592,
+    "midi": 63
+  },
+  {
+    "startTick": 14400,
+    "endTick": 14592,
+    "midi": 70
+  },
+  {
+    "startTick": 14592,
+    "endTick": 15360,
+    "midi": 46
+  },
+  {
+    "startTick": 14592,
+    "endTick": 15360,
+    "midi": 58
+  },
+  {
+    "startTick": 14592,
+    "endTick": 15360,
+    "midi": 65
+  },
+  {
+    "startTick": 14592,
+    "endTick": 15360,
+    "midi": 73
+  },
+  {
+    "startTick": 15360,
+    "endTick": 15552,
+    "midi": 46
+  },
+  {
+    "startTick": 15360,
+    "endTick": 15552,
+    "midi": 58
+  },
+  {
+    "startTick": 15360,
+    "endTick": 15552,
+    "midi": 65
+  },
+  {
+    "startTick": 15360,
+    "endTick": 15552,
+    "midi": 73
+  },
+  {
+    "startTick": 15552,
+    "endTick": 15744,
+    "midi": 48
+  },
+  {
+    "startTick": 15552,
+    "endTick": 15744,
+    "midi": 57
+  },
+  {
+    "startTick": 15552,
+    "endTick": 15744,
+    "midi": 63
+  },
+  {
+    "startTick": 15552,
+    "endTick": 15744,
+    "midi": 72
+  },
+  {
+    "startTick": 15744,
+    "endTick": 15936,
+    "midi": 49
+  },
+  {
+    "startTick": 15744,
+    "endTick": 15936,
+    "midi": 58
+  },
+  {
+    "startTick": 15744,
+    "endTick": 15936,
+    "midi": 65
+  },
+  {
+    "startTick": 15744,
+    "endTick": 15936,
+    "midi": 70
+  },
+  {
+    "startTick": 15936,
+    "endTick": 16512,
+    "midi": 51
+  },
+  {
+    "startTick": 15936,
+    "endTick": 16512,
+    "midi": 56
+  },
+  {
+    "startTick": 15936,
+    "endTick": 16512,
+    "midi": 63
+  },
+  {
+    "startTick": 15936,
+    "endTick": 16512,
+    "midi": 72
+  },
+  {
+    "startTick": 16512,
+    "endTick": 16704,
+    "midi": 48
+  },
+  {
+    "startTick": 16512,
+    "endTick": 16704,
+    "midi": 56
+  },
+  {
+    "startTick": 16512,
+    "endTick": 16704,
+    "midi": 63
+  },
+  {
+    "startTick": 16512,
+    "endTick": 16704,
+    "midi": 68
+  },
+  {
+    "startTick": 16704,
+    "endTick": 16896,
+    "midi": 48
+  },
+  {
+    "startTick": 16704,
+    "endTick": 16896,
+    "midi": 56
+  },
+  {
+    "startTick": 16704,
+    "endTick": 16896,
+    "midi": 63
+  },
+  {
+    "startTick": 16704,
+    "endTick": 16896,
+    "midi": 68
+  },
+  {
+    "startTick": 16896,
+    "endTick": 17088,
+    "midi": 51
+  },
+  {
+    "startTick": 16896,
+    "endTick": 17088,
+    "midi": 56
+  },
+  {
+    "startTick": 16896,
+    "endTick": 17088,
+    "midi": 63
+  },
+  {
+    "startTick": 16896,
+    "endTick": 17088,
+    "midi": 70
+  },
+  {
+    "startTick": 17088,
+    "endTick": 17376,
+    "midi": 51
+  },
+  {
+    "startTick": 17088,
+    "endTick": 17376,
+    "midi": 55
+  },
+  {
+    "startTick": 17088,
+    "endTick": 17376,
+    "midi": 63
+  },
+  {
+    "startTick": 17088,
+    "endTick": 17376,
+    "midi": 70
+  },
+  {
+    "startTick": 17376,
+    "endTick": 17472,
+    "midi": 44
+  },
+  {
+    "startTick": 17376,
+    "endTick": 17472,
+    "midi": 60
+  },
+  {
+    "startTick": 17376,
+    "endTick": 17472,
+    "midi": 63
+  },
+  {
+    "startTick": 17376,
+    "endTick": 17472,
+    "midi": 68
+  },
+  {
+    "startTick": 17472,
+    "endTick": 18240,
+    "midi": 44
+  },
+  {
+    "startTick": 17472,
+    "endTick": 18240,
+    "midi": 60
+  },
+  {
+    "startTick": 17472,
+    "endTick": 18240,
+    "midi": 63
+  },
+  {
+    "startTick": 17472,
+    "endTick": 18240,
+    "midi": 68
+  }
+]

@@ -3,7 +3,10 @@
 
 namespace
 {
-    constexpr int buzzerPins[] = {17, 21, 22};
+    constexpr int buzzerPins[] = {13, 17, 21, 22};
+
+    const uint16_t *currentSong = nullptr;
+    size_t currentSongLength = 0;
 
     int lastTone[snd_NumChannels] = {0};
 
@@ -23,15 +26,53 @@ namespace Sound
         }
     }
 
-    void startSong(unsigned long instant)
+    void silence(unsigned long now)
     {
+        songStart = 0;
+        noteIndex = 0;
+        timeOfCompletedNotes = 0;
+        for (int i = 0; i < snd_NumChannels; i++)
+        {
+            writeTone(i, 0);
+        }
+    }
+
+    void buttonPressed(uint8_t buttonId, unsigned long now)
+    {
+        if (buttonId == 0)
+        {
+            startSong(now, 1);
+        }
+        else if (buttonId == 1)
+        {
+            startSong(now, 0);
+        }
+    }
+
+    void buttonReleased(uint8_t buttonId, unsigned long now)
+    {
+    }
+
+    void startSong(unsigned long instant, int song)
+    {
+        if (song == 0)
+        {
+            currentSong = snd_tempUp;
+            currentSongLength = sizeof(snd_tempUp) / sizeof(snd_tempUp[0]);
+        }
+        else if (song == 1)
+        {
+            currentSong = snd_tempDown;
+            currentSongLength = sizeof(snd_tempDown) / sizeof(snd_tempDown[0]);
+        }
+
         songStart = instant;
         noteIndex = 0;
         timeOfCompletedNotes = 0;
 
         for (int i = 0; i < snd_NumChannels; i++)
         {
-            writeTone(i, snd_OdeToJoy[i + 1]);
+            writeTone(i, currentSong[i + 1]);
         }
     }
 
@@ -45,7 +86,7 @@ namespace Sound
         }
     }
 
-    void update(unsigned long now, bool btnHeld)
+    void update(unsigned long now)
     {
         if (songStart != 0)
         {
@@ -54,15 +95,14 @@ namespace Sound
             unsigned long timeInNote = timeSinceStart - timeOfCompletedNotes;
 
             int currNoteIndex = noteIndex * (snd_NumChannels + 1);
-            int currDuration = snd_OdeToJoy[currNoteIndex];
+            int currDuration = currentSong[currNoteIndex];
             if (timeInNote > currDuration)
             {
                 // Go to next note
                 noteIndex++;
                 timeOfCompletedNotes += currDuration;
                 currNoteIndex = noteIndex * (snd_NumChannels + 1);
-                int snd_OdeToJoyLength = sizeof(snd_OdeToJoy) / sizeof(snd_OdeToJoy[0]);
-                if (snd_OdeToJoyLength < ((noteIndex + 1) * (snd_NumChannels + 1)))
+                if (currentSongLength < ((noteIndex + 1) * (snd_NumChannels + 1)))
                 {
                     songStart = 0;
                     noteIndex = 0;
@@ -77,7 +117,7 @@ namespace Sound
 
                     for (int i = 0; i < snd_NumChannels; i++)
                     {
-                        writeTone(i, snd_OdeToJoy[currNoteIndex + i + 1]);
+                        writeTone(i, currentSong[currNoteIndex + i + 1]);
                     }
                 }
             }
