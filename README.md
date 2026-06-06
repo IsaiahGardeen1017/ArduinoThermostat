@@ -30,6 +30,10 @@ Upload:
 pio run -t upload
 ```
 
+```powershell
+pio run -t upload && pio device monitor
+```
+
 Open serial monitor:
 
 ```powershell
@@ -44,5 +48,7 @@ pio run -t clean
 
 ## Notes
 
-- If the board shows up on a different COM port later, update `upload_port` and `monitor_port` in `platformio.ini`.
-- The current starter app writes status text to the TFT display and logs button state to serial.
+- If the board shows up on a different COM port later, update `upload_port` and
+  `monitor_port` in `platformio.ini`.
+- The current starter app writes status text to the TFT display and logs button
+  state to serial.

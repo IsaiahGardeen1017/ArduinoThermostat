@@ -17,8 +17,8 @@ namespace
     bool sampleAvailable = false;
 
     uint8_t activeAddress = 0x44;
-    uint8_t activeSdaPin = 32;
-    uint8_t activeSclPin = 33;
+    uint8_t activeSdaPin = 21;
+    uint8_t activeSclPin = 22;
     unsigned long readIntervalMs = kDefaultMinReadIntervalMs;
     unsigned long lastReadAt = 0;
 

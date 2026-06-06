@@ -3,7 +3,7 @@
 
 namespace
 {
-    constexpr int buzzerPins[] = {13, 17, 21, 22};
+    constexpr int buzzerPins[] = {13, 17};
 
     const uint16_t *currentSong = nullptr;
     size_t currentSongLength = 0;

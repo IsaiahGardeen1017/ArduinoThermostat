@@ -4,7 +4,7 @@
 
 namespace Thermometer
 {
-    void init(uint8_t sdaPin = 32, uint8_t sclPin = 33, unsigned long minReadIntervalMs = 1000);
+    void init(uint8_t sdaPin = 21, uint8_t sclPin = 22, unsigned long minReadIntervalMs = 1000);
     void update(unsigned long now);
 
     float getTemp();
