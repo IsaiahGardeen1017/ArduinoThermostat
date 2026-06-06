@@ -54,7 +54,7 @@ const tempDownSound: NoteBlock[] = [{
 buildSound();
 
 async function buildSound() {
-    const channels = 4;
+    const channels = 2;
     const midiPath = "./Sounds/FinlandiaCorrected.mid";
 
     const flatNotes = await extractFlatMidiNotes(midiPath, 0);

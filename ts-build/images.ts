@@ -6,6 +6,13 @@ const imageLoc = "Images/this-clean.png";
 buildImageHeaders();
 
 async function buildImageHeaders() {
+    const bg = await dataToWriteFromPngLocation("Images/this-clean.png");
+    writeImageToCfile([bg]);
+}
+
+async function dataToWriteFromPngLocation(
+    imageLoc: string,
+): Promise<DataToGetWrittenToC> {
     const buffer = await fs.readFileSync(imageLoc);
     const colorMap: Record<string, number> = {};
     const colorIndexMap: Record<string, number> = {};
@@ -53,8 +60,10 @@ async function buildImageHeaders() {
         colorValuesArray.push(hashArray[i]);
     }
 
-    writeImageToCfile(colorValuesArray, pixelColorIndexArray);
-    0;
+    return await dataToWriteToCfromTypeScriptArrays(
+        colorValuesArray,
+        pixelColorIndexArray,
+    );
 }
 
 function printColor(text: string, color: string | RGB): void {
@@ -100,7 +109,19 @@ function rgb565(rgb: RGB): number {
     return ((rgb.r & 0xf8) << 8) | ((rgb.g & 0xfc) << 3) | (rgb.b >> 3);
 }
 
-function writeImageToCfile(palletteArr: string[], pixelIndexArray: number[]) {
+type DataToGetWrittenToC = {
+    height: number;
+    width: number;
+    pixels: string;
+    pallette: string;
+    index: number;
+    enum: string;
+};
+
+function dataToWriteToCfromTypeScriptArrays(
+    palletteArr: string[],
+    pixelIndexArray: number[],
+): DataToGetWrittenToC {
     const indexRows = [];
     let currRow = [];
     for (let i = 0; i < pixelIndexArray.length; i++) {
@@ -117,21 +138,55 @@ function writeImageToCfile(palletteArr: string[], pixelIndexArray: number[]) {
 
     const rgb565s = palletteArr.map((col) => rgb565(hexToRgb(col))).join(",");
 
+    return {
+        height: 135,
+        width: 240,
+        pixels: indexesContent,
+        pallette: rgb565s,
+        index: 0,
+        enum: "BACKGROUND",
+    };
+}
+
+function writeImageToCfile(images: DataToGetWrittenToC[]) {
     const fileContents = `
 #pragma once
 #include <Arduino.h>
 
-constexpr uint16_t imageWidth = 240;
-constexpr uint16_t imageHeight = 135;
-
-constexpr uint16_t imagePalette[] = {
-    ${rgb565s}
+struct ImageData
+{
+    uint16_t width;
+    uint16_t height;
+    const uint16_t *palette;
+    const uint8_t *indexes;
 };
 
-constexpr uint8_t imageIndexes[] = {
-${indexesContent}
+enum ImageId {
+    ${
+        images.map((i) => {
+            return `IMAGE_${i.enum}`;
+        }).join(",\n")
+    }
 };
-    `;
+
+
+${
+        images.map((i) => {
+            return `constexpr uint16_t image${i.index}Palette[] = {${i.pallette}};
+constexpr uint8_t image${i.index}Indexes[] = {${i.pixels}};\n`;
+        }).join("\n")
+    }
+
+
+constexpr ImageData images[] = {
+    ${
+        images.map((i) => {
+            return `{${i.width}, ${i.height}, image${i.index}Palette, image${i.index}Indexes},`;
+        }).join("\n")
+    }
+};
+
+`;
 
     fs.writeFileSync("../include/image.h", fileContents, "utf-8");
 }

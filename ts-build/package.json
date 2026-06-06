@@ -4,9 +4,10 @@
     "version": "0.1.0",
     "type": "module",
     "scripts": {
+        "font": "rm -f images/digits/* && tsx fonts.ts",
         "img": "tsx images.ts",
         "snd": "tsx sound.ts",
-        "all": "npm run img && npm run snd"
+        "all": "npm run font && npm run img && npm run snd"
     },
     "dependencies": {
         "react": "^19.2.0",
