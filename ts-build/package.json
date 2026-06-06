@@ -4,17 +4,18 @@
     "version": "0.1.0",
     "type": "module",
     "scripts": {
-        "font": "rm -f images/digits/* && tsx fonts.ts",
+        "clear-font": "rm -f images/digits/*",
+        "font": "tsx fonts.ts",
         "img": "tsx images.ts",
         "snd": "tsx sound.ts",
-        "all": "npm run font && npm run img && npm run snd"
+        "all": "npm run img && npm run snd"
     },
     "dependencies": {
         "react": "^19.2.0",
         "react-dom": "^19.2.0"
     },
     "devDependencies": {
-        "@types/node": "^24.12.4",
+        "@types/node": "^24.13.1",
         "@types/pngjs": "^6.0.5",
         "pngjs": "^7.0.0",
         "tsx": "^4.20.6",

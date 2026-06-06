@@ -1,8 +1,6 @@
 import fs from "node:fs";
 import { PNG } from "pngjs";
 
-const imageLoc = "Images/this-clean.png";
-
 buildImageHeaders();
 
 async function buildImageHeaders() {
